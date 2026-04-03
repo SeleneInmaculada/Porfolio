@@ -93,15 +93,40 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-color: #2a2680;
+    background-image:
+        linear-gradient(135deg, rgba(99, 102, 241, 0.75), rgba(67, 56, 162, 0.75)),
+        repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 20px),
+        repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 18px),
+        radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.25), transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.25), transparent 45%);
     color: white;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"%3E%3Cg fill="none" stroke="%23ffffff" opacity="0.12" stroke-width="1"%3E%3Cpath d="M0 0h120"/%3E%3Cpath d="M0 20h120"/%3E%3Cpath d="M0 40h120"/%3E%3Cpath d="M0 60h120"/%3E%3Cpath d="M0 80h120"/%3E%3Cpath d="M0 100h120"/%3E%3Cpath d="M20 0v120"/%3E%3Cpath d="M40 0v120"/%3E%3Cpath d="M60 0v120"/%3E%3Cpath d="M80 0v120"/%3E%3Cpath d="M100 0v120"/%3E%3Cpath d="M10 14l10-12"/%3E%3Cpath d="M30 38l10-12"/%3E%3Cpath d="M50 62l10-12"/%3E%3Cpath d="M70 86l10-12"/%3E%3Cpath d="M90 110l10-12"/%3E%3Cpath d="M15 100h20"/%3E%3Cpath d="M45 80h20"/%3E%3Cpath d="M75 60h20"/%3E%3Cpath d="M105 40h10"/%3E%3C/g%3E%3C/svg%3E');
+    background-repeat: repeat;
+    opacity: 0.55;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h2 {
     font-size: 3rem;
     margin-bottom: 20px;
     font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.35);
 }
 
 .hero-content p {
