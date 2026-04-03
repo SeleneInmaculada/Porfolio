@@ -84,21 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => {
         observer.observe(section);
     });
-
-    // Manejo del formulario de contacto (simulado)
-    const contactForm = document.querySelector('.contact-form form');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Aquí iría la lógica para enviar el formulario
-            alert('¡Gracias por tu mensaje! Te contactaré pronto.');
-
-            // Limpiar el formulario
-            this.reset();
-        });
-    }
 });
 
 // Agregar clase para animaciones CSS
